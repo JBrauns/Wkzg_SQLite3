@@ -1,3 +1,8 @@
+"""CSV Provider for the SQLite3 project
+
+This module provides functionality for loading and storing csv perfmon files.
+"""
+
 import csv
 import os
 
@@ -30,9 +35,21 @@ class Sqlite3CsvProvider(object):
     
   def load_data(
     self,
-    file_path,
-    columns
+    file_path: str,
+    columns: list
   ):
+    """ Missing documentation
+    
+    This method is very restrictive when it comes to the data the csv file contains.
+    
+    
+    Args:
+      file_path (str): The csv-file path to open and read
+      columns (list): Missing
+      
+    Returns:
+      The return value. A list with all filtered columns from the source csv
+    """
     if(not os.path.isfile(file_path)):
       raise ValueError("Parameter file_path is required to be a valid file")
       
@@ -85,10 +102,19 @@ class Sqlite3CsvProvider(object):
     
   def store_data(
     self,
-    file_path,
-    columns,
-    data
+    file_path : str,
+    columns : list,
+    data : list
   ):
+    """ Store data in a csv-file with perfmon required style
+    
+    -- Detailed description missing --
+    
+    Args:
+      file_path (str): Missing
+      columns (list): Missing
+      data (list): Missing
+    """
     if(not os.path.isfile(file_path)):
       raise ValueError("Parameter file_path must be a valid file")
       
