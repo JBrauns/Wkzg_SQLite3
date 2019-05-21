@@ -67,6 +67,11 @@ class TestSqlite3Project(unittest.TestCase):
       self.assertEqual(a, b)
     
     self.clear(dir)
+    
+  def test_store_all(
+    self
+  ):
+    self.fail('Not implemented')
   
 if(__name__ == "__main__"):
   unittest.main()
